@@ -73,4 +73,4 @@ class RosePatternNutshell(Scene):
             rate_func=linear
         )
         self.wait()
-         
+        

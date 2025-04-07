@@ -1,0 +1,72 @@
+# ==============================
+# 通用忽略规则（适用于所有项目）
+# ==============================
+
+# 操作系统自动生成的文件
+.DS_Store           # macOS 系统文件
+Thumbs.db           # Windows 缩略图缓存
+desktop.ini         # Windows 文件夹配置
+
+# 编辑器/IDE 生成的文件
+.vscode/            # VS Code 配置
+.idea/              # JetBrains IDE (IntelliJ, PyCharm) 配置
+*.swp               # Vim 临时文件
+*.sublime-workspace # Sublime Text 临时文件
+
+# 编译生成的文件
+*.exe               # 可执行文件（Windows）
+*.out               # 可执行文件（Linux/macOS）
+*.class             # Java 字节码
+*.o                 # C/C++ 对象文件
+*.so                # Linux 动态库
+*.dll               # Windows 动态库
+
+# 日志和临时文件
+*.log               # 日志文件
+*.tmp               # 临时文件
+*.bak               # 备份文件
+
+# ==============================
+# 语言/框架特定规则
+# ==============================
+
+# Python
+__pycache__/        # Python 缓存目录
+*.py[cod]           # Python 编译文件（.pyc, .pyo, .pyd）
+venv/               # 虚拟环境（Virtualenv）
+env/                # 虚拟环境（常见名称）
+.python-version     # pyenv 版本文件
+
+# Node.js/JavaScript
+node_modules/       # npm 依赖目录
+dist/               # 打包输出目录
+npm-debug.log       # npm 调试日志
+yarn-error.log      # Yarn 错误日志
+
+# Java
+target/             # Maven 编译输出
+build/              # Gradle 编译输出
+*.jar               # JAR 文件
+*.war               # WAR 文件
+
+# C/C++
+build/              # CMake/Make 构建目录
+Debug/              # Visual Studio 调试目录
+Release/            # Visual Studio 发布目录
+
+# ==============================
+# 其他常见忽略项
+# ==============================
+
+# 敏感文件（如密钥、配置文件）
+.env                # 环境变量文件
+*.key               # 密钥文件
+*.pem               # SSL 证书
+
+# 测试和覆盖率报告
+coverage/           # 测试覆盖率报告
+*.lcov              # LCOV 覆盖率数据
+
+# 系统目录
+temp/               # 临时目录
+cache/              # 缓存目录

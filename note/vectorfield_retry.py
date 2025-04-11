@@ -20,15 +20,15 @@ class VectorFieldRetry(Scene):
         def vector_func(state: np.ndarray) -> np.ndarray:
             state = np.array(state).T
             x, y = state[:2]
-            dx = y
-            dy = -x
+            dx = 30 * x - 3 * x ** 2 + x * y 
+            dy = 60 * y - 3 * y ** 2 + 4 * x * y
             vect = np.column_stack([dx, dy])
             return vect
 
         def ODE_system(state: np.ndarray) -> np.ndarray:
             x, y = state
-            dxdt = y
-            dydt = -x
+            dxdt = 30 * x - 3 * x ** 2 + x * y 
+            dydt = 60 * y - 3 * y ** 2 + 4 * x * y
             return np.array([dxdt, dydt])
 
         vec = VectorField(

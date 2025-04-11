@@ -1,4 +1,4 @@
-from manim_imports_ext import * # type: ignore
+from manimlib import * # type: ignore
 
 
 """

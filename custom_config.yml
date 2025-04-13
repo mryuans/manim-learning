@@ -8,13 +8,7 @@
 #     pi_creature_images: "images/pi_creature/svg"
 #     downloads: "manim_downloads"
     # Use the default value for the rest
-directories:
-  base: "D:\\study\\python作业\\manimGL学习"
-  subdirs: 
-    raster_images: "assets\\raster_images"
-    sounds: "assets\\sounds"
-    svg_images: "assets\\svg_images"
-universal_import_line: "from manimlib.manim_imports_ext import *"
+universal_import_line: "from manimlib import *"
 window:
   position_string: UR
   monitor_index: 0

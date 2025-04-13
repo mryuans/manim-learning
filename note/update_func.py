@@ -39,7 +39,9 @@ class UpdateSimplifer(Scene):
 
 class DefineFunc(Scene):
     def construct(self) -> None:
-        # TODO: figure out the difference betwenn "f_always" and "always"
+        # The difference between always and f_always
+        # always: take in (f, x) x->f(x)
+        # f_always: take in (f, g) g->f(g())
         c = Circle().set_color(color=BLUE, opacity=0.5)
         s = Square().set_color(color=RED, opacity=0.5)
 

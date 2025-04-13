@@ -70,3 +70,6 @@ coverage/           # 测试覆盖率报告
 # 系统目录
 temp/               # 临时目录
 cache/              # 缓存目录
+
+test_set.py
+videos/

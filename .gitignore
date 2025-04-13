@@ -32,7 +32,9 @@ desktop.ini         # Windows 文件夹配置
 
 # Python
 __pycache__/        # Python 缓存目录
-*.py[cod]           # Python 编译文件（.pyc, .pyo, .pyd）
+*.pyc
+*.pyd               # Python 编译文件（.pyc, .pyo, .pyd）
+*.pyo
 venv/               # 虚拟环境（Virtualenv）
 env/                # 虚拟环境（常见名称）
 .python-version     # pyenv 版本文件

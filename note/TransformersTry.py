@@ -30,3 +30,18 @@ class Matrices(Scene):
     def construct(self) -> None:
         matrice = WeightMatrix()
         self.play(Write(matrice))
+
+        matrix_set = [
+            [1, 1, 1, 1],
+            [1, 2, 2, 1],
+            [1, 1, 1, 1],
+            [1, 1, 1, 1]
+        ]
+
+        matrice_1 = IntegerMatrix(
+            matrix_set,
+            ellipses_row=-2,
+            ellipses_col=-2
+        )
+
+        self.play(Transform(matrice, matrice_1))

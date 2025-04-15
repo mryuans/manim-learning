@@ -54,6 +54,33 @@ class VectorFieldRetry(Scene):
             }
         )
         self.add(vec, animated_lines)
-        vec.add_updater(lambda m: m.update_vectors())
         self.wait(10)
 
+
+
+class TransformScenn(Scene):
+    def construct(self) -> None:
+        def func_1(p: np.ndarray) -> np.ndarray:
+            return p / 3
+        
+        def func_2(p: np.ndarray) -> np.ndarray:
+            return p ** 2
+
+        def func_rotate(p: np.ndarray) -> np.ndarray:
+            return rotate_vector(Vect2ToVect3(p / 3), PI / 3)
+
+        vec1 = VectorField(func_1).save_state()
+        vec2 = VectorField(func_2)
+        vec_rotate = VectorField(func_rotate)
+
+        self.play(VFadeIn(vec1))
+        self.play(
+            Transform(vec1, vec2)
+        )
+        self.wait()
+        self.play(
+            Transform(vec1, vec_rotate)
+        )
+
+        self.play(vec1.animate.restore())
+ 

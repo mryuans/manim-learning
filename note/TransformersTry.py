@@ -44,4 +44,5 @@ class Matrices(Scene):
             ellipses_col=-2
         )
 
-        self.play(Transform(matrice, matrice_1))
+        self.play(RandomizeMatrixEntries(matrice))
+        self.play(TransformMatchingShapes(matrice, matrice_1))

@@ -36,6 +36,7 @@ class SaveAndRestore(InteractiveScene):
         )
         self.wait()
         self.play(
-            sin_graph.animate.restore(),
-            rec.animate.restore()
+            Restore(sin_graph),
+            Restore(rec)
         )
+# The Restore() and mob.animate.restore() is both accepted

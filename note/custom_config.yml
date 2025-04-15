@@ -8,13 +8,17 @@
 #     pi_creature_images: "images/pi_creature/svg"
 #     downloads: "manim_downloads"
     # Use the default value for the rest
-universal_import_line: "from manimlib.manim_imports_ext import *"
+directories:
+   mirror_module_path: True
+   removed_mirror_prefix: "/Users/cengyi/Manimproduce/manim-learning/note/"
+   base: "/Users/cengyi/Manimproduce/"
+universal_import_line: "from manimlib import *"
 window:
   position_string: UR
   monitor_index: 0
   full_screen: False
 camera:
-  resolution: (2560, 1600)
+  resolution: (3840, 2160)
   background_color: "#000000"
   fps: 60
   background_opacity: 1.0
@@ -23,8 +27,6 @@ file_writer:
 text:
   font: "CMU Serif"
   alignment: "CENTER"
-decimalnumber:
-  font: "CMU Serif"
 tex:
   template: "default"
 embed:

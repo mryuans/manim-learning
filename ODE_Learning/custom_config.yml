@@ -8,7 +8,11 @@
 #     pi_creature_images: "images/pi_creature/svg"
 #     downloads: "manim_downloads"
     # Use the default value for the rest
-universal_import_line: "from manimlib.manim_imports_ext import *"
+directories:
+   mirror_module_path: True
+   removed_mirror_prefix: "/Users/cengyi/Manimproduce/manim-learning/ODE_Learning/"
+   base: "/Users/cengyi/Manimproduce/"
+universal_import_line: "from manimlib import *"
 window:
   position_string: UR
   monitor_index: 0

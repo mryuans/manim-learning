@@ -20,15 +20,15 @@ class VectorFieldRetry(Scene):
         def vector_func(state: np.ndarray) -> np.ndarray:
             state = np.array(state).T
             x, y = state[:2]
-            dx = x
-            dy = y
+            dx = -y
+            dy = x
             vect = np.column_stack([dx, dy])
             return vect
 
         def ODE_system(state: np.ndarray) -> np.ndarray:
             x, y = state
-            dxdt = x
-            dydt = y
+            dxdt = -y
+            dydt = x
             return np.array([dxdt, dydt])
 
         vec = VectorField(
@@ -54,5 +54,6 @@ class VectorFieldRetry(Scene):
             }
         )
         self.add(vec, animated_lines)
+        vec.add_updater(lambda m: m.update_vectors())
         self.wait(10)
 

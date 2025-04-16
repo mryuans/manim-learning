@@ -6,7 +6,7 @@ class LissajousCurve(ParametricCurve):
         self,
         a: float = 1,
         b: float = 1,
-        A: float = 1,
+        A: float= 1,
         B: float = 1,
         delta: float = PI/2,
         theta_range: float = 2 * PI,

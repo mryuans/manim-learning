@@ -1,4 +1,4 @@
-from manimlib import *
+from manimlib import * # type: ignore
 
 
 class SaveAndRestore(InteractiveScene):
@@ -10,12 +10,15 @@ class SaveAndRestore(InteractiveScene):
             height=4
             )
         sin_graph = axes.get_graph(np.sin)
-        dx = 0.01
-        rec = axes.get_riemann_rectangles(
-            sin_graph,
-            dx=dx,
-            negative_color=RED_E,
-            fill_opacity=1,
+        # dx = 0.01
+        # rec = axes.get_riemann_rectangles(
+        #     sin_graph,
+        #     dx=dx,
+        #     negative_color=RED_E,
+        #     fill_opacity=1,
+        # )
+        rec = axes.get_area_under_graph(
+            graph=sin_graph, x_range=axes.x_range[:2], fill_color=BLUE, fill_opacity=0.5
         )
         self.play(LaggedStart(
             FadeIn(axes),
@@ -24,7 +27,6 @@ class SaveAndRestore(InteractiveScene):
             lag_ratio=0.1,
             run_time=3
         ))
-
         next_area = rec.copy().stretch_about_point(1 / PI, 0, axes.get_origin())
         next_graph = sin_graph.copy().stretch_about_point(1 / PI, 0, axes.get_origin())
 

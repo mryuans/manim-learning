@@ -1,6 +1,4 @@
 from manim_imports_ext import * # type: ignore
-from pyautogui import resolution # type: ignore
-
 
 """
  Topic: camera, Tex, ThreeDSurface

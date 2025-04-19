@@ -12,6 +12,9 @@ directories:
    mirror_module_path: True
    removed_mirror_prefix: "/Users/cengyi/Manimproduce/manim-learning/note/"
    base: "/Users/cengyi/Manimproduce/"
+   subdirs:
+     raster_images: "images/raster"
+     vector_images: "images/vector"
 universal_import_line: "from manimlib import *"
 window:
   position_string: UR

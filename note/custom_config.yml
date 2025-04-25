@@ -15,6 +15,7 @@ directories:
    subdirs:
      raster_images: "images/raster"
      vector_images: "images/vector"
+     downloads: "tmp_downloads"
 universal_import_line: "from manimlib import *"
 window:
   position_string: UR
@@ -35,3 +36,5 @@ tex:
 embed:
   autoreload: True
 ignore_manimlib_modules_on_reload: True
+scene:
+  show_animation_progress: True

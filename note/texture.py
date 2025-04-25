@@ -5,6 +5,7 @@ class TexTure(Scene):
     def construct(self) -> None:
         ball = TexturedSurface(
             Sphere(),
-            "./images/raster/map.jpg"
+            "map.jpg"
         )
         self.add(ball)
+        self.embed()

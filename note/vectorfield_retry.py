@@ -3,37 +3,32 @@ from manimlib import * # type: ignore
 
 class VectorFieldRetry(Scene):
     def construct(self) -> None:
-        magnitude_range=(0, 4)
-        time_width=0.3
         axes = NumberPlane(
-            x_range=(-TAU, 5 * PI, PI),
-            y_range=(-4.5, 4.5, 2),
-            width=FRAME_WIDTH,
-            height=FRAME_HEIGHT
         )
         def vector_func(state: np.ndarray) -> np.ndarray:
             state = np.array(state).T
             x, y = state[:2]
-            dx = y
-            dy = np.sin(x)
+            dx = x
+            dy = -y
             vect = np.column_stack([dx, dy])
             return vect
 
         vec = VectorField(
             vector_func, 
             axes,
-            magnitude_range=magnitude_range,
-            density=4
+            magnitude_range=(0, 4),
+            density=2
         )
         stream_lines = StreamLines(
             func=vector_func,
             coordinate_system=axes,
+            stroke_width=3,
+            n_samples_per_line=20,
+            color_by_magnitude=False,
+            stroke_color=WHITE
         )
         animated_lines = AnimatedStreamLines(
             stream_lines,
-            line_anim_config={
-                "time_width": time_width
-            }
         )
         self.add(vec, animated_lines)
         self.wait(10)

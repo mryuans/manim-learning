@@ -6,14 +6,14 @@ class Dot_move(Scene):
         axes = Axes()
         graph = axes.get_graph(np.sin)
         dot = GlowDot()
-        x_tracker = ValueTracker(1.5 * PI)
+        x_tracker = ValueTracker(0)
         get_x = x_tracker.get_value
-        dot.add_updater(lambda d: d.move_to(axes.i2gp(-get_x(), graph)))
+        dot.add_updater(lambda d: d.move_to(graph.pfp(get_x())))
         self.add(axes, dot, graph)
         self.frame.f_always.move_to(dot.get_center)
         self.frame.scale(0.7)
         self.play(
-            x_tracker.animate.set_value(0).set_anim_args(run_time=5),
+            x_tracker.animate.set_value(1).set_anim_args(run_time=5),
         )
 
 

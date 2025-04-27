@@ -23,4 +23,3 @@ class FatherAndSon(InteractiveScene):
             run_time=4,
             rate_func=there_and_back_with_pause
         )
-

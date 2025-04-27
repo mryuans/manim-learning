@@ -5,7 +5,7 @@ class UpdaterMobGroup(InteractiveScene):
     def construct(self) -> None:
         arrayValue = ValueTracker(np.linspace(0, 1, 4))
         dots = Group(
-            Dot()
+            Group(TrueDot(radius=0.05).make_3d(), GlowDot(radius=0.30))
             .set_color(random_bright_color()) for _ in range(4)
         )
 
@@ -39,6 +39,9 @@ class UpdaterMobGroup(InteractiveScene):
         self.play(
             *[arrayValue.animate.set_value(params) for params in new_square_params],
             run_time=14,
+        )
+        self.play(
+            UpdateFromFunc(arrayValue, lambda v: v.set_value(np.random.random(4))),
         )
 
 

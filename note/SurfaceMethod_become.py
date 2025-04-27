@@ -28,12 +28,20 @@ class SurfaceMethod(InteractiveScene):
         sphere.save_state()
         sphere.become(pre_sphere)
 
+        clip_pos = ValueTracker(1e-10)
+        clip = Square3D(4)
+        clip.set_opacity(0.25)
+        clip.set_color(GREY)
+        clip.replace(axes_mesh)
+        clip.add_updater(lambda m: m.set_z(- clip_pos.get_value()))
+
 
         self.play(
             Write(axes_mesh),
             FadeIn(axes),
             ShowCreation(circle),
             FadeIn(sphere),
+            FadeIn(clip),
             run_time=3
         )
 
@@ -41,7 +49,6 @@ class SurfaceMethod(InteractiveScene):
         self.play(Restore(sphere), run_time=4)
         self.play(frame.animate.reorient(40, 59, 0).set_anim_args(rate_func=smooth, run_time=3))
         
-        clip_pos = ValueTracker(1e-10)
         sphere.add_updater(lambda m: m.set_clip_plane(OUT, clip_pos.get_value()))
 
         self.play(clip_pos.animate.set_value(-0.5), run_time=3)

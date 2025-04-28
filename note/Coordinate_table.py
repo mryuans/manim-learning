@@ -20,7 +20,14 @@ class TableAndChangeable(InteractiveScene):
             y_range=(0, 1, 0.1),
             height=4,
             width=4,
+            axis_config=dict(
+                decimal_number_config=dict(
+                    num_decimal_places=1,
+                    font_size=24
+                )
+            )
         )
+        axes.add_coordinate_labels()
 
         axes.shift(RIGHT * 3)
         axes.get_x_axis_label("x proportion")
@@ -55,8 +62,8 @@ class TableAndChangeable(InteractiveScene):
         
         pos_dot = get_dot(axes.c2p(0, 0))
         pos_dot.add_updater(lambda m: m.move_to(axes.c2p(x_p.get_value(), y_p.get_value())))
-        label = Tex(R"(0.00, 0.00)", font_size=24)
-        coordins = label.make_number_changeable(0.00, replace_all=True)
+        label = Tex(R"(0.01, 0.01)", font_size=24)
+        coordins = label.make_number_changeable(0.01, replace_all=True)
         coordins[0].f_always.set_value(x_p.get_value)
         coordins[1].f_always.set_value(y_p.get_value)
         label.always.next_to(pos_dot.get_center(), UR, buff=0.1)

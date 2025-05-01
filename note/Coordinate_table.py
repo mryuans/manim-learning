@@ -1,3 +1,4 @@
+import decimal
 from manimlib import * # type: ignore
 
 
@@ -35,7 +36,7 @@ class TableAndChangeable(InteractiveScene):
         rec = Square(side_length=4)
         rec.set_stroke(GREY, 0.3)
         rec.move_to(axes.get_center())
-        rec.shift(UR * 0.05)
+        rec.next_to(axes.c2p(0, 0), UR, buff=0)
 
         x_p = ValueTracker(0.00)
         y_p = ValueTracker(0.00)
@@ -123,3 +124,20 @@ class TableAndChangeable(InteractiveScene):
             
         )
 
+
+class AxesParam(InteractiveScene):
+    def construct(self):
+        axes = Axes(
+            x_range=(-1, 1, 1),
+            y_range=(-1, 1, 1),
+            height=1,
+            width=1,
+            unit_size=1,
+            axis_config=dict(
+                tick_size=0.05,
+                decimal_number_config=dict(
+                    num_decimal_places=2
+                )
+            )
+        )
+    
